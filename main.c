@@ -82,6 +82,45 @@ void quick_sort(int *a, int left, int right)
 
 
 }
+float media_vet(int vet[], int N)
+{
+    float media;
+    for(int i=0; i<N; i++)
+    {
+        media += vet[i];
+    }
+    return media/N;
+}
+
+void mediana_vet(int v[], int N)
+{
+    int aux;
+    float mediana;
+
+    for(int i=0; i<N-1; i++)
+    {
+        for(int j=i+1; j<N; j++)
+        {
+
+            if(v[i] > v[j])
+            {
+                aux = v[i];
+                v[i] = v[j];
+                v[j] = aux;
+            }
+        }
+    }
+
+    if(N%2)
+    {
+        mediana = v[N/2];
+    }
+    else
+    {
+        mediana = (v[N/2-1]+v[N/2])/2;
+    }
+    printf("\n\nMediana: %2.1f \n", mediana);
+}
 
 int main()
 {
