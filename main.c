@@ -122,6 +122,24 @@ void mediana_vet(int v[], int N)
     printf("\n\nMediana: %2.1f \n", mediana);
 }
 
+int maior(int X[], int n)
+{
+    if(n==1) return X[0];
+    int m=maior(X,n-1);
+    if(m>X[n-1]) return m;
+    else return X[n-1];
+
+}
+
+int menor(int X[], int n)
+{
+    if(n==1) return X[0];
+    int m=menor(X,n-1);
+    if(m<X[n-1]) return m;
+    else return X[n-1];
+
+}
+
 int main()
 {
     int Vrand[1000];
