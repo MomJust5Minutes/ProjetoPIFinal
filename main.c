@@ -1,3 +1,25 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+
+void vetor_random(int vet[], int N)
+{
+    for (int i = 0; i < N; i++)
+    {
+        vet[i]=rand()%1000;
+    }
+}
+
+void print_vet(int vet[], int N)
+{
+    for(int i=0; i<N; i++)
+    {
+        if (i%7==0)
+            printf("\n");
+        printf("\t[%3d]: %3d", i+1, vet[i]);
+    }
+}
+
 int main()
 {
     int Vrand[1000];
